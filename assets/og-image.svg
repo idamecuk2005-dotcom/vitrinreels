@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#141210"/>
+  <g stroke="#f4ede4" stroke-opacity=".6" stroke-width="4" fill="none">
+    <path d="M40 90V40h50"/><path d="M1110 40h50v50"/><path d="M40 540v50h50"/><path d="M1110 590h50v-50"/>
+  </g>
+  <rect x="80" y="80" width="118" height="40" rx="8" fill="#ff4a3d"/>
+  <circle cx="102" cy="100" r="7" fill="#141210"/>
+  <text x="118" y="108" font-family="'JetBrains Mono', monospace" font-weight="500" font-size="22" fill="#141210">REC</text>
+  <text x="222" y="108" font-family="'JetBrains Mono', monospace" font-size="22" fill="#f4ede4" fill-opacity=".72">TÜRKİYE GENELİ · 9:16</text>
+  <text x="80" y="300" font-family="'Bricolage Grotesque', 'Arial Black', sans-serif" font-weight="800" font-size="88" letter-spacing="-3" fill="#f4ede4">Esnafın Reels'i,</text>
+  <text x="80" y="392" font-family="'Bricolage Grotesque', 'Arial Black', sans-serif" font-weight="800" font-size="88" letter-spacing="-3" fill="#ff4a3d">şehrin gençlerinden.</text>
+  <text x="80" y="530" font-family="'Bricolage Grotesque', 'Arial Black', sans-serif" font-weight="800" font-size="56" letter-spacing="-2" fill="#f4ede4">vitrin</text>
+  <circle cx="217" cy="523" r="8" fill="#ff4a3d"/>
+  <text x="82" y="560" font-family="'JetBrains Mono', monospace" font-weight="500" font-size="14" letter-spacing="9" fill="#f4ede4" fill-opacity=".72">REELS</text>
+  <text x="1120" y="530" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="22" fill="#f4ede4" fill-opacity=".72">vitrinreels.netlify.app</text>
+</svg>
