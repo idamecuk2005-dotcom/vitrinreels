@@ -94,13 +94,22 @@ svg { display: block; flex: none; }
   .btn-row .btn { width: 100%; }
 }
 
-/* ---------- Yer tutucular ---------- */
-.ph-label { font-size: 11px; letter-spacing: .14em; color: var(--ph-text); }
-.ph-label-dark { color: #BFB3A6; }
-.ph {
-  background: var(--beige); border: 1.5px solid var(--red);
-  display: flex; align-items: flex-end; padding: 14px;
+/* ---------- Çizim kartları ---------- */
+.ph { margin: 0; position: relative; background: var(--beige); border: 1.5px solid var(--red); overflow: hidden; }
+.ph img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ph figcaption {
+  position: absolute; left: 10px; bottom: 10px;
+  background: var(--cream); color: var(--red); border: 1px solid var(--red);
+  font-size: 10px; letter-spacing: .16em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px;
 }
+
+/* Kayıt etiketi */
+.rec-dot {
+  display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: currentColor; margin-right: 6px; vertical-align: 1px;
+  animation: blink 1.4s steps(1, end) infinite;
+}
+@keyframes blink { 0%, 60% { opacity: 1; } 61%, 100% { opacity: .25; } }
 
 /* ---------- Logo ---------- */
 .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--red); }
@@ -168,6 +177,15 @@ svg { display: block; flex: none; }
   background: var(--beige); border: 1.5px solid var(--red); border-radius: 22px;
 }
 .hero-copy { text-align: center; }
+.vf-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 11px; letter-spacing: .14em; }
+.vf-rec { display: inline-flex; align-items: center; background: var(--red); color: var(--cream); padding: 3px 10px; border-radius: 999px; }
+.vf-tag { border: 1px solid var(--red); padding: 2px 10px; border-radius: 999px; }
+.vf-corner { position: absolute; width: 26px; height: 26px; border: 2px solid var(--red); opacity: .55; pointer-events: none; }
+.vf-corner.tl { top: 14px; left: 14px; border-right: 0; border-bottom: 0; border-top-left-radius: 8px; }
+.vf-corner.tr { top: 14px; right: 14px; border-left: 0; border-bottom: 0; border-top-right-radius: 8px; }
+.vf-corner.bl { bottom: 14px; left: 14px; border-right: 0; border-top: 0; border-bottom-left-radius: 8px; }
+.vf-corner.br { bottom: 14px; right: 14px; border-left: 0; border-top: 0; border-bottom-right-radius: 8px; }
+.hero-frame .vf-top { padding: 4px 18px 0; }
 .hero h1 {
   font-size: clamp(48px, 9vw, 132px); line-height: .9; letter-spacing: -0.035em;
   margin-bottom: 20px; text-wrap: balance;
@@ -232,7 +250,12 @@ svg { display: block; flex: none; }
   display: flex; align-items: center; justify-content: center;
   padding: 56px 24px 48px; background: var(--panel);
 }
-.how-visual > .ph-label { position: absolute; left: 24px; top: 20px; right: 24px; }
+.how-tag {
+  position: absolute; left: 24px; top: 20px;
+  display: inline-flex; align-items: center; color: #E6DCCF;
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+}
+.how-tag .rec-dot { color: #E8636A; }
 .phone {
   width: 270px; height: 560px; max-width: 100%;
   padding: 10px; border-radius: 40px; background: #111;
@@ -241,12 +264,33 @@ svg { display: block; flex: none; }
 .phone-screen {
   position: relative; height: 100%; overflow: hidden;
   display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 18px; border-radius: 31px; background: var(--beige);
+  padding: 18px 18px 20px; border-radius: 31px; background: var(--beige);
+  color: var(--cream);
 }
-.phone-screen > .ph-label { position: absolute; top: 18px; left: 18px; right: 18px; font-size: 10px; }
-.phone-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-.phone-handle { font-family: var(--f-head); font-weight: 700; font-size: 16px; color: var(--panel); }
-.phone-sub { font-size: 11px; color: var(--panel); }
+.phone-screen::after {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 26%;
+  background: linear-gradient(transparent, rgba(42, 36, 34, .82));
+}
+.phone-scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.reel-progress { position: absolute; top: 16px; left: 16px; right: 16px; height: 3px; border-radius: 3px; background: rgba(163, 29, 38, .25); overflow: hidden; z-index: 1; }
+.reel-progress i { display: block; height: 100%; width: 100%; background: var(--red); transform-origin: left; animation: progress 8s linear infinite; }
+@keyframes progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.reel-sample {
+  position: absolute; top: 30px; left: 16px; z-index: 1;
+  font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
+  background: var(--cream); color: var(--red); padding: 1px 8px; border-radius: 999px;
+}
+.reel-caption {
+  position: absolute; left: 16px; right: 56px; top: 64px; z-index: 1;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+}
+.reel-caption > * { padding: 3px 9px; border-radius: 6px; font-size: 12px; line-height: 1.3; }
+.reel-caption span { background: var(--cream); color: var(--red); }
+.reel-caption strong { background: var(--red); color: var(--cream); font-family: var(--f-head); font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+.reel-icons { position: absolute; right: 14px; bottom: 74px; z-index: 2; display: flex; flex-direction: column; gap: 14px; }
+.phone-handle, .phone-sub { position: relative; z-index: 2; }
+.phone-handle { font-family: var(--f-head); font-weight: 700; font-size: 16px; }
+.phone-sub { font-size: 11px; }
 
 .how-copy {
   flex: 1 1 520px;

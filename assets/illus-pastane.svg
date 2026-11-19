@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 280" fill="none" stroke="#A31D26" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect width="220" height="280" fill="#DCCFC0" stroke="none"/>
+  <!-- tente -->
+  <path d="M14 30h192v26H14z" fill="#F3ECE1"/>
+  <path d="M14 30h24v26H14zM62 30h24v26H62zM110 30h24v26h-24zM158 30h24v26h-24z" fill="#A31D26"/>
+  <path d="M14 56q12 12 24 0q12 12 24 0q12 12 24 0q12 12 24 0q12 12 24 0q12 12 24 0q12 12 24 0q12 12 24 0"/>
+  <!-- vitrin dolabı -->
+  <rect x="26" y="84" width="168" height="168" rx="8" fill="#F3ECE1"/>
+  <path d="M26 168h168M26 246h168"/>
+  <path d="M40 92l18 0M40 100l10 0" stroke-opacity=".4"/>
+  <!-- üst raf: pasta -->
+  <path d="M52 166v-22h52v22" fill="#C9474F"/>
+  <path d="M56 144v-16h44v16" fill="#F3ECE1"/>
+  <path d="M56 136q5 5 11 0t11 0t11 0t11 0"/>
+  <circle cx="78" cy="122" r="5" fill="#A31D26"/>
+  <path d="M78 117q2-6 7-7"/>
+  <!-- üst raf: cupcake -->
+  <path d="M128 166l-4-18h28l-4 18z" fill="#F3ECE1"/>
+  <path d="M130 148v12M138 148v12M146 148v12" stroke-width="1.5"/>
+  <path d="M122 148q0-14 16-16q16 2 16 16z" fill="#C9474F"/>
+  <circle cx="138" cy="128" r="3.5" fill="#A31D26"/>
+  <path d="M164 166v-14h20v14" fill="#F3ECE1"/>
+  <path d="M164 152q10-8 20 0"/>
+  <!-- alt raf: kruvasan + makaron -->
+  <path d="M42 240q4-26 30-26q26 0 30 26q-8-6-14-4q-6-10-16-10q-10 0-16 10q-6-2-14 4z" fill="#F3ECE1"/>
+  <path d="M60 222l4 14M72 216v18M84 222l-4 14" stroke-width="1.8"/>
+  <g fill="#C9474F"><rect x="118" y="214" width="26" height="12" rx="6"/><rect x="118" y="228" width="26" height="12" rx="6"/><rect x="150" y="214" width="26" height="12" rx="6" fill="#F3ECE1"/><rect x="150" y="228" width="26" height="12" rx="6"/></g>
+  <path d="M120 227h22M152 227h22" stroke-width="1.5"/>
+  <!-- ayaklar -->
+  <path d="M40 252v14M180 252v14"/>
+</svg>
