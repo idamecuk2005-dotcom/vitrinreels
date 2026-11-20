@@ -1,21 +1,45 @@
 <!DOCTYPE html>
-<html lang="tr"><head><meta charset="utf-8"><title>Vitrin Reels — Profil fotoğrafı (1080×1080)</title>
+<html lang="tr"><head><meta charset="utf-8"><title>Vitrin Reels — Profil fotoğrafı seçenekleri (1080×1080)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Mono:wght@500&display=block" rel="stylesheet">
 <style>
+  :root{--cream:#F3ECE1;--red:#A31D26;--soft:#C9474F}
   html,body{margin:0;width:1080px;height:1080px;overflow:hidden}
-  body{display:grid;place-items:center;background:#A31D26}
-  body.cream{background:#F3ECE1}
+  .opt{display:none;position:relative;width:1080px;height:1080px;align-items:center;justify-content:center}
+  .opt.on{display:flex}
+  .serif{font-family:"Fraunces",serif;font-weight:900;line-height:1}
+  .mono{font-family:"DM Mono",monospace;font-weight:500}
+
+  /* 1 — V monogram + REC noktası */
+  #o1{background:var(--red);color:var(--cream)}
+  #o1 .v{font-size:720px;letter-spacing:-0.04em;margin:40px 0 0 70px;display:flex;align-items:baseline}
+  #o1 .dot{display:inline-block;width:120px;height:120px;border-radius:50%;background:var(--cream);margin-left:6px}
+
+  /* 2 — Vizör: krem zemin, köşeler, V */
+  #o2{background:var(--cream);color:var(--red)}
+  #o2 .v{font-size:600px;letter-spacing:-0.04em;margin-top:30px}
+  #o2 .c{position:absolute;width:150px;height:150px;border:34px solid var(--red)}
+  #o2 .tl{top:200px;left:200px;border-right:0;border-bottom:0;border-top-left-radius:34px}
+  #o2 .tr{top:200px;right:200px;border-left:0;border-bottom:0;border-top-right-radius:34px}
+  #o2 .bl{bottom:200px;left:200px;border-right:0;border-top:0;border-bottom-left-radius:34px}
+  #o2 .br{bottom:200px;right:200px;border-left:0;border-top:0;border-bottom-right-radius:34px}
+  #o2 .rec{position:absolute;top:248px;right:248px;width:70px;height:70px;border-radius:50%;background:var(--red)}
+
+  /* 3 — Kelime logosu */
+  #o3{background:var(--red);color:var(--cream);flex-direction:column}
+  #o3 .w{font-size:300px;letter-spacing:-0.045em;display:flex;align-items:baseline}
+  #o3 .w i{display:inline-block;width:64px;height:64px;border-radius:50%;background:var(--cream);margin-left:8px}
+  #o3 .s{font-size:76px;letter-spacing:.62em;margin:26px 0 0 .62em}
+
+  /* 4 — Telefon çerçevesi içinde V */
+  #o4{background:var(--red)}
+  #o4 .ph{width:520px;height:720px;border:42px solid var(--cream);border-radius:110px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;position:relative}
+  #o4 .v{font-size:500px;color:var(--cream);letter-spacing:-0.04em;margin-top:24px}
+  #o4 .notch{position:absolute;top:34px;left:50%;transform:translateX(-50%);width:120px;height:26px;border-radius:13px;background:var(--cream)}
 </style></head>
 <body>
-  <!-- ?v=cream : krem zemin, kırmızı ikon -->
-  <svg id="icon" width="600" height="600" viewBox="0 0 34 34" fill="none" aria-label="Vitrin Reels">
-    <rect x="6.5" y="2.5" width="21" height="29" rx="5.5" stroke="#F3ECE1" stroke-width="2.4"/>
-    <path d="M14 11.5l8.5 5.5-8.5 5.5z" fill="#F3ECE1"/>
-  </svg>
-  <script>
-    if (new URLSearchParams(location.search).get('v') === 'cream') {
-      document.body.classList.add('cream');
-      document.querySelectorAll('#icon [stroke]').forEach(e => e.setAttribute('stroke', '#A31D26'));
-      document.querySelectorAll('#icon [fill]:not([fill=none])').forEach(e => e.setAttribute('fill', '#A31D26'));
-    }
-  </script>
+  <div class="opt" id="o1"><span class="serif v">V<span class="dot"></span></span></div>
+  <div class="opt" id="o2"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span><span class="serif v">V</span></div>
+  <div class="opt" id="o3"><span class="serif w">vitrin<i></i></span><span class="mono s">REELS</span></div>
+  <div class="opt" id="o4"><div class="ph"><span class="notch"></span><span class="serif v">V</span></div></div>
+  <script>document.getElementById('o' + (new URLSearchParams(location.search).get('o') || '1')).classList.add('on');</script>
 </body></html>
