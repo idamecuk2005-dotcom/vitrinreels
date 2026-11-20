@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8"><title>Vitrin Reels — Profil fotoğrafı (1080×1080)</title>
+<style>
+  html,body{margin:0;width:1080px;height:1080px;overflow:hidden}
+  body{display:grid;place-items:center;background:#A31D26}
+  body.cream{background:#F3ECE1}
+</style></head>
+<body>
+  <!-- ?v=cream : krem zemin, kırmızı ikon -->
+  <svg id="icon" width="600" height="600" viewBox="0 0 34 34" fill="none" aria-label="Vitrin Reels">
+    <rect x="6.5" y="2.5" width="21" height="29" rx="5.5" stroke="#F3ECE1" stroke-width="2.4"/>
+    <path d="M14 11.5l8.5 5.5-8.5 5.5z" fill="#F3ECE1"/>
+  </svg>
+  <script>
+    if (new URLSearchParams(location.search).get('v') === 'cream') {
+      document.body.classList.add('cream');
+      document.querySelectorAll('#icon [stroke]').forEach(e => e.setAttribute('stroke', '#A31D26'));
+      document.querySelectorAll('#icon [fill]:not([fill=none])').forEach(e => e.setAttribute('fill', '#A31D26'));
+    }
+  </script>
+</body></html>
